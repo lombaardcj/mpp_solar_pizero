@@ -16,21 +16,8 @@
 - `chmod +x /home/pi/axper_poll.sh`
 - `nano /home/pi/axper_poll.sh`
 
-ADd the following to the file:
-```
-#!/bin/sh
-#Get Serial number of inverter
-/usr/local/bin/mpp-solar -p /dev/ttyUSB0 -o mqtt --mqttbroker 192.168.1.105 --mqttuser <user> --mqttpass <password> -c QPID
-sleep 1
-
-#Get current status
-/usr/local/bin/mpp-solar -p /dev/ttyUSB0 -o mqtt --mqttbroker 192.168.1.105 --mqttuser <user> --mqttpass <password> -c QPIGS
-sleep 1
-
-#Get current config settings
-/usr/local/bin/mpp-solar -p /dev/ttyUSB0 -o mqtt --mqttbroker 192.168.1.105 --mqttuser <user> --mqttpass <password> -c QPIRI
-```
-
+Add the following to the file:
+Refer to - https://github.com/lombaardcj/mpp_solar_pizero/blob/main/axpert_poll.sh
 - 
 
 # Setup CRON job to run every minute
